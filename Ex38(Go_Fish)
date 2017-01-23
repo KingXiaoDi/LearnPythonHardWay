@@ -1,0 +1,53 @@
+import random
+
+#create a deck of 52 cards
+deck = [];
+for i in range (1,53):
+  card_num = i // 4;
+  if card_num = 1:
+    card_num = "ace";
+  if card_num = 11:
+    card_num = "jack";
+  if card_num = 12:
+    card_num = "queen";
+  if card_num = 13:
+    card_num = "king";
+  suit_num = i % 4;
+  if suit_num = 0:
+    suit = "clubs";
+  elif suit_num = 1:
+    suit = "diamonds";
+  elif suit_num = 2:
+    suit = "hearts";
+  elif suit_num = 3:
+    suit = "spades";
+  card = str(card_num) + suit;
+  deck.append(card);
+
+print (deck); 
+
+#create a player class
+class Player:
+  hand = [];
+  def __init__(self, name):
+    self.name = name;
+    
+  #initial 5 card draw
+  def draw():
+    i = 0;
+    while i < 5:
+      ran_card = random.randrange(len(deck));
+      hand.append(deck.pop(ran_card));
+      i++;
+  
+  #get a list of cards in your hand
+  def see_hand():
+    print (hand);
+    
+def setup():
+  players = raw_input("How many players? Please enter an integer");
+  i = 0;
+  while i < players:
+    name = raw_input("Input name or type 'no'");
+    if name = 'no':
+      new_name = "Player" + str(i+1);
